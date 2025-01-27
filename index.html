@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WhatsApp Redirect</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body, html {
+            min-height: 100%;
+            width: 100%;
+            background-color: #000;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .image-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .clickable-image {
+            cursor: pointer;
+            max-height: 100vh;
+            width: auto;
+            height: auto;
+        }
+
+        .footer-content {
+            padding: 20px;
+            text-align: center;
+            color: #999;
+            font-family: Arial, sans-serif;
+            background-color: #1a1a1a;
+        }
+
+        .disclaimer {
+            margin-bottom: 15px;
+            font-size: 14px;
+            color: #999;
+        }
+
+        .support-section {
+            margin: 15px 0;
+        }
+
+        .support-title {
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .support-text {
+            color: #999;
+            font-size: 14px;
+        }
+
+        .privacy-link {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            margin-top: 15px;
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
+            overflow-y: auto;
+        }
+
+        .modal-content {
+            background-color: #1a1a1a;
+            margin: 20px auto;
+            padding: 20px;
+            width: 90%;
+            max-width: 800px;
+            color: #fff;
+            position: relative;
+            line-height: 1.6;
+        }
+
+        .close-button {
+            position: sticky;
+            top: 20px;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .modal-title {
+            font-size: 24px;
+            margin-bottom: 20px;
+            padding-top: 20px;
+        }
+
+        .modal-text {
+            margin-bottom: 15px;
+        }
+
+        /* Mobile specific styles */
+        @media only screen and (max-width: 768px) {
+            .clickable-image {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+            
+            .footer-content {
+                padding: 15px;
+            }
+
+            .modal-content {
+                width: 95%;
+                margin: 10px auto;
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="image-container">
+            <img src="https://i.ibb.co/VB82pdr/VASOOLI-678.png" alt="Clickable Image" class="clickable-image" onclick="redirectToWhatsApp()">
+        </div>
+        <div class="footer-content">
+            <div class="disclaimer">
+                Disclaimer:- This Website is only for 18+ users. Please Leave This Site If you are from Telangana, Orissa, Assam, Sikkim, Andhra Pradesh, and Nagaland<br>
+                Be aware of fraudsters, we only deal via WhatsApp.
+            </div>
+            <div class="support-section">
+                <div class="support-title">24/7 Support</div>
+                <div class="support-text">We have a team of experts, who can guide you properly via whatsapp.</div>
+            </div>
+            <a class="privacy-link" onclick="openPrivacyPolicy()">Privacy Policy</a>
+        </div>
+    </div>
+
+    <!-- Privacy Policy Modal -->
+    <div id="privacyModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" onclick="closePrivacyPolicy()">&times;</span>
+            <h2 class="modal-title">Privacy Policy</h2>
+            <div class="modal-text">
+                This Privacy Policy Document Contains Types Of Information That Is Collected And Recorded By us And How We Use It.
+
+                If You Have Additional Questions Or Require More Information About Our Privacy Policy, Do Not Hesitate To Contact Us.
+
+                This Privacy Policy Applies Only To Our Online Activities And Is Valid For Visitors To Our Website With Regard To The Information That They Shared And/Or Collect In us. This Policy Is Not Applicable To Any Information Collected Offline Or Via Channels Other Than This Website.
+
+                Consent
+                By Using Our Website, You Hereby Consent To Our Privacy Policy And Agree To Its Terms.
+
+                Information We Collect
+                The Personal Information That You Are Asked To Provide, And The Reasons Why You Are Asked To Provide It, Will Be Made Clear To You At The Point We Ask You To Provide Your Personal Information.
+
+                If You Contact Us Directly, We May Receive Additional Information About You Such As Your Name, Email Address, Phone Number, The Contents Of The Message And/Or Attachments You May Send Us, And Any Other Information You May Choose To Provide.
+
+                When You Register For An Account, We May Ask For Your Contact Information, Including Items Such As Name, Company Name, Address, Email Address, And Telephone Number.
+
+                How We Use Your Information
+                We Use The Information We Collect In Various Ways, Including To:
+
+                Provide, Operate, And Maintain Our Website
+                Improve, Personalize, And Expand Our Website
+                Understand And Analyze How You Use Our Website
+                Develop New Products, Services, Features, And Functionality
+                Communicate With You, Either Directly Or Through One Of Our Partners, Including For Customer Service, To Provide You With Updates And Other Information Relating To The Website, And For Marketing And Promotional Purposes
+                Send You Emails
+                Find And Prevent Fraud
+
+                [Rest of privacy policy content...]
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function redirectToWhatsApp() {
+            window.location.href = "https://wa.me/918528169934";
+        }
+
+        function openPrivacyPolicy() {
+            document.getElementById('privacyModal').style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closePrivacyPolicy() {
+            document.getElementById('privacyModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal when clicking outside of it
+        window.onclick = function(event) {
+            const modal = document.getElementById('privacyModal');
+            if (event.target == modal) {
+                closePrivacyPolicy();
+            }
+        }
+    </script>
+</body>
+</html>
